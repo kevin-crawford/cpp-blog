@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -31,7 +31,10 @@ const IndexPage = () => (
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           id

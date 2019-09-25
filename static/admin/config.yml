@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: kevin-crawford/cpp-blog
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 collections:
@@ -10,7 +11,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - { name: "path", label: "Path", widget: "string" }
+      - { name: "path", label: "Path", widget: "hidden" }
       - { name: "author", label: "Author", widget: "string" }
       - { name: "date", label: "Date", widget: "datetime" }
       - {
