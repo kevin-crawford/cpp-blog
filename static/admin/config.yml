@@ -3,7 +3,9 @@ backend:
   repo: kevin-crawford/cpp-blog
 publish_mode: editorial_workflow
 media_folder: static/img
-public_folder: /img
+public_folder: src/images/uploads
+site_url: https://gallant-poitras-d92b48.netlify.com/
+display_url: https://gallant-poitras-d92b48.netlify.com/
 collections:
   - name: post
     label: Post
@@ -18,10 +20,12 @@ collections:
           name: "Article Image",
           label: "Article Image",
           widget: "image",
+          default: "src/images/waterpolo.jpg",
           required: false,
         }
       - { name: "title", label: "Title", widget: "string" }
       - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "tags", label: "Tags", widget: "list", allow_add: true }
       - { name: "type", label: "Type", widget: "hidden", default: "blog" }
   - name: podcast
     label: Podcast
@@ -37,8 +41,10 @@ collections:
           name: "Article Image",
           label: "Article Image",
           widget: "image",
+          default: "src/images/podcast-default.png",
           required: false,
         }
       - { name: "title", label: "Title", widget: "string" }
       - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "tags", label: "Tags", widget: "list", allow_add: true }
       - { name: "type", label: "Type", widget: "hidden", default: "podcast" }
