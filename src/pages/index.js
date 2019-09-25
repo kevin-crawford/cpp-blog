@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`Podcast`, `waterpolo`, `Crosspass`]} />
     <h1>Home Page</h1>
     <StaticQuery
       query={indexQuery}

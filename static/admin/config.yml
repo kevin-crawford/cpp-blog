@@ -10,11 +10,18 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - { name: path, label: Path }
-      - { name: author, label: Author }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: "path", label: "Path", widget: "string" }
+      - { name: "author", label: "Author", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - {
+          name: "Article Image",
+          label: "Article Image",
+          widget: "image",
+          required: false,
+        }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "type", label: "Type", widget: "hidden", default: "blog" }
   - name: podcast
     label: Podcast
     description: Audio Podcasts
@@ -22,8 +29,15 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - { name: path, label: Path }
-      - { name: author, label: Author }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: "path", label: "Path", widget: "string" }
+      - { name: "author", label: "Author", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - {
+          name: "Article Image",
+          label: "Article Image",
+          widget: "image",
+          required: false,
+        }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "type", label: "Type", widget: "hidden", default: "podcast" }
