@@ -16,7 +16,7 @@ collections:
       - { name: "author", label: "Author", widget: "string" }
       - { name: "date", label: "Date", widget: "datetime" }
       - {
-          name: "Article Image",
+          name: "image",
           label: "Article Image",
           widget: "image",
           default: "src/images/waterpolo.jpg",
@@ -37,8 +37,8 @@ collections:
       - { name: "author", label: "Author", widget: "string" }
       - { name: "date", label: "Date", widget: "datetime" }
       - {
-          name: "Article Image",
-          label: "Article Image",
+          name: "image",
+          label: "Podcast Image",
           widget: "image",
           default: "src/images/podcast-default.png",
           required: false,
