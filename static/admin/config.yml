@@ -2,8 +2,7 @@ backend:
   name: github
   repo: kevin-crawford/cpp-blog
 publish_mode: editorial_workflow
-media_folder: static/img
-public_folder: src/images/uploads
+media_folder: src/images/uploads
 site_url: https://gallant-poitras-d92b48.netlify.com/
 display_url: https://gallant-poitras-d92b48.netlify.com/
 collections:

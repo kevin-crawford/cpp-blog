@@ -1,7 +1,7 @@
 ---
 author: Kevin Crawford
 date: 2019-09-25T21:28:13.156Z
-Article Image: /src/images/uploads/easter-eggs.jpg
+image: /src/images/uploads/easter-eggs.jpg
 title: Easter Suprise
 tags:
   - easter
@@ -9,4 +9,5 @@ tags:
   - suprise
 type: blog
 ---
+
 Dont let the bunny man get you down
