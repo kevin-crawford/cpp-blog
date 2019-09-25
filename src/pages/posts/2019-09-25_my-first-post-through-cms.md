@@ -1,7 +1,8 @@
 ---
 author: Kevin Crawford
+path: /fifth-post
 date: 2019-09-25T21:55:10.223Z
-image: /src/images/uploads/coffee-shop.jpg
+image: "../../images/uploads/coffee-shop.jpg"
 title: My first Post through CMS
 tags:
   - easter
@@ -9,4 +10,5 @@ tags:
   - suprise
 type: blog
 ---
+
 dasasfSFAfasF
