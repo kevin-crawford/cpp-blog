@@ -1,6 +1,7 @@
 ---
 title: "First Podcast - Introduction"
 date: 2019-09-24 07:00:00
+image: ../../images/podcast-default.jpg
 author: "Kevin Crawford"
 path: "/first-podcast"
 ---
