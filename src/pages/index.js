@@ -4,8 +4,8 @@ import Post from "../components/Post"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Row, Col } from "reactstrap"
-import Sidebar from '../components/Sidebar'
-
+import Showcase from "../components/Showcase"
+import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +13,7 @@ const IndexPage = () => (
     <h1>Home Page</h1>
     <Row>
       <Col md="8">
+        <Showcase />
         <StaticQuery
           query={indexQuery}
           render={data => {
