@@ -15,6 +15,7 @@ const IndexPage = () => (
     <Row>
       <Col md="8">
         <PodcastIndex />
+        <h1>Recent Articles</h1>
         <StaticQuery
           query={indexQuery}
           render={data => {

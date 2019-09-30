@@ -10,7 +10,6 @@ import {
 	Input,
 } from "reactstrap"
 
-import { Timeline } from 'react-twitter-widgets'
 import Img from "gatsby-image"
 
 const Sidebar = () => (
@@ -85,7 +84,7 @@ const Sidebar = () => (
 				<div className="twitter">
 					<a className="twitter-timeline"
 						href="https://twitter.com/crosspasspod"
-						data-tweet-limit="5"
+						data-tweet-limit="3"
 						data-chrome="nofooter noborders">
 						Tweets by @Crosspasspod
 					</a>
