@@ -10,18 +10,7 @@ import {
 	Input,
 } from "reactstrap"
 
-import {
-	TwitterTimelineEmbed,
-	TwitterShareButton,
-	TwitterFollowButton,
-	TwitterHashtagButton,
-	TwitterMentionButton,
-	TwitterTweetEmbed,
-	TwitterMomentShare,
-	TwitterDMButton,
-	TwitterVideoEmbed,
-	TwitterOnAirButton
-} from 'react-twitter-embed';
+import { Timeline } from 'react-twitter-widgets'
 import Img from "gatsby-image"
 
 const Sidebar = () => (
@@ -93,11 +82,15 @@ const Sidebar = () => (
 				<CardTitle>
 					Recent Tweets
 				</CardTitle>
-				<TwitterTimelineEmbed
-					sourceType="profile"
-					screenName="crosspasspod"
-					options={{ height: 400 }}
-				/>
+				<Timeline dataSource={{
+					sourceType: 'profile',
+					screenName: 'twitterdev'
+				}}
+					options={{
+						username: 'TwitterDev',
+						height: '400'
+					}}
+					onLoad={() => console.log('Timeline is loaded!')} />
 			</CardBody>
 		</Card>
 
