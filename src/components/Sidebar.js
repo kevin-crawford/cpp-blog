@@ -82,11 +82,15 @@ const Sidebar = () => (
 				<CardTitle>
 					Recent Tweets
 				</CardTitle>
-				<a class="twitter-timeline"
-					href="https://twitter.com/TwitterDev"
-					data-chrome="nofooter noborders">
-					Tweets by @TwitterDev
-</a>
+				<div className="twitter">
+					<a className="twitter-timeline"
+						href="https://twitter.com/TwitterDev"
+						data-tweet-limit="5"
+						data-chrome="nofooter noborders">
+						Tweets by @TwitterDev
+					</a>
+				</div>
+
 			</CardBody>
 		</Card>
 
