@@ -82,15 +82,11 @@ const Sidebar = () => (
 				<CardTitle>
 					Recent Tweets
 				</CardTitle>
-				<Timeline dataSource={{
-					sourceType: 'profile',
-					screenName: 'twitterdev'
-				}}
-					options={{
-						username: 'TwitterDev',
-						height: '400'
-					}}
-					onLoad={() => console.log('Timeline is loaded!')} />
+				<a class="twitter-timeline"
+					href="https://twitter.com/TwitterDev"
+					data-chrome="nofooter noborders">
+					Tweets by @TwitterDev
+</a>
 			</CardBody>
 		</Card>
 
