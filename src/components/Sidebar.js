@@ -84,10 +84,10 @@ const Sidebar = () => (
 				</CardTitle>
 				<div className="twitter">
 					<a className="twitter-timeline"
-						href="https://twitter.com/TwitterDev"
+						href="https://twitter.com/crosspasspod"
 						data-tweet-limit="5"
 						data-chrome="nofooter noborders">
-						Tweets by @TwitterDev
+						Tweets by @Crosspasspod
 					</a>
 				</div>
 
