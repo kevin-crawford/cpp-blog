@@ -9,6 +9,19 @@ import {
 	FormGroup,
 	Input,
 } from "reactstrap"
+
+import {
+	TwitterTimelineEmbed,
+	TwitterShareButton,
+	TwitterFollowButton,
+	TwitterHashtagButton,
+	TwitterMentionButton,
+	TwitterTweetEmbed,
+	TwitterMomentShare,
+	TwitterDMButton,
+	TwitterVideoEmbed,
+	TwitterOnAirButton
+} from 'react-twitter-embed';
 import Img from "gatsby-image"
 
 const Sidebar = () => (
@@ -75,6 +88,11 @@ const Sidebar = () => (
 				/>
 			</CardBody>
 		</Card>
+		<TwitterTimelineEmbed
+			sourceType="profile"
+			screenName="crosspasspod"
+			options={{ height: 400 }}
+		/>
 	</div>
 )
 

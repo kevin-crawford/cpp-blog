@@ -6,14 +6,15 @@ import SEO from "../components/seo"
 import { Row, Col } from "reactstrap"
 import Showcase from "../components/Showcase"
 import Sidebar from "../components/Sidebar"
+import PodcastIndex from '../components/PodcastIndex';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Home Page</h1>
+    <Showcase className="showcase" />
     <Row>
       <Col md="8">
-        <Showcase />
+        <PodcastIndex />
         <StaticQuery
           query={indexQuery}
           render={data => {
@@ -71,4 +72,5 @@ const indexQuery = graphql`
     }
   }
 `
+
 export default IndexPage
