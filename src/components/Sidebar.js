@@ -10,6 +10,7 @@ import {
 	Input,
 } from "reactstrap"
 
+
 import Img from "gatsby-image"
 
 const Sidebar = () => (
@@ -82,14 +83,14 @@ const Sidebar = () => (
 					Recent Tweets
 				</CardTitle>
 				<div className="twitter">
-					<a className="twitter-timeline"
-						href="https://twitter.com/crosspasspod"
-						data-tweet-limit="3"
-						data-chrome="nofooter noborders">
-						Tweets by @Crosspasspod
-					</a>
-				</div>
 
+				</div>
+				<a class="twitter-timeline"
+					href="https://twitter.com/crosspasspod"
+					data-tweet-limit="5"
+					data-chrome="nofooter noborders">
+					Tweets by @Crosspasspod
+					</a>
 			</CardBody>
 		</Card>
 

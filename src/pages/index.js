@@ -11,7 +11,6 @@ import PodcastIndex from '../components/PodcastIndex';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Showcase className="showcase" />
     <Row>
       <Col md="8">
         <PodcastIndex />
