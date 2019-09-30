@@ -88,11 +88,19 @@ const Sidebar = () => (
 				/>
 			</CardBody>
 		</Card>
-		<TwitterTimelineEmbed
-			sourceType="profile"
-			screenName="crosspasspod"
-			options={{ height: 400 }}
-		/>
+		<Card>
+			<CardBody>
+				<CardTitle>
+					Recent Tweets
+				</CardTitle>
+				<TwitterTimelineEmbed
+					sourceType="profile"
+					screenName="crosspasspod"
+					options={{ height: 400 }}
+				/>
+			</CardBody>
+		</Card>
+
 	</div>
 )
 

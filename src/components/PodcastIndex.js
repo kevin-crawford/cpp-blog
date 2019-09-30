@@ -1,15 +1,8 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Row, Col } from "reactstrap"
-import Showcase from "../components/Showcase"
-import Sidebar from "../components/Sidebar"
-
 
 const PodcastIndex = () => (
-
 	<StaticQuery
 		query={podcastQuery}
 		render={data => {
