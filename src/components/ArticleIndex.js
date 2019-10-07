@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import { StaticQuery } from "gatsby"
 import Post from "../components/Post"
 import { indexQuery } from '../graphql/queries';
 
@@ -10,8 +10,10 @@ const ArticleIndex = () => (
 			return (
 				<div>
 					<h1>Recent Articles</h1>
-					{data.allMarkdownRemark.edges.map(({ node }) => (
+					{data.allMarkdownRemark.edges.map(({ node }, index) => (
 						<Post
+							key={index}
+							id={node.id}
 							title={node.frontmatter.title}
 							author={node.frontmatter.author}
 							path={node.frontmatter.path}
@@ -25,6 +27,36 @@ const ArticleIndex = () => (
 			)
 		}}
 	/>
-)
+);
+
+// const indexQuery = graphql`
+// query indexQuery {
+// 	allMarkdownRemark(
+// 		filter: { fileAbsolutePath: { regex: "/posts/" } }
+// 		sort: { fields: [frontmatter___date], order: DESC }
+// 	) {
+// 		edges {
+// 			node {
+// 				id
+// 				frontmatter {
+// 					title
+// 					date(formatString: "MMM Do YYYY")
+// 					author
+// 					path
+// 					tags
+// 					image {
+// 						childImageSharp {
+// 							fluid(maxWidth: 600) {
+// 								...GatsbyImageSharpFluid
+// 							}
+// 						}
+// 					}
+// 				}
+// 				excerpt
+// 			}
+// 		}
+// 	}
+// }
+// `
 
 export default ArticleIndex;

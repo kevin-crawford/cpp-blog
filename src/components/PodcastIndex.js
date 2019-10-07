@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import { StaticQuery } from "gatsby"
 import Post from "../components/Post"
 import { podcastQuery } from '../graphql/queries';
 
@@ -10,8 +10,10 @@ const PodcastIndex = () => (
       return (
         <div>
           <h1>Recent Podcasts</h1>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+          {data.allMarkdownRemark.edges.map(({ node }, index) => (
             <Post
+              key={index}
+              id={node.id}
               title={node.frontmatter.title}
               author={node.frontmatter.author}
               path={node.frontmatter.path}
@@ -25,8 +27,7 @@ const PodcastIndex = () => (
       )
     }}
   />
-)
-
+);
 
 
 export default PodcastIndex;

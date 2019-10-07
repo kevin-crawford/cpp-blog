@@ -1,6 +1,6 @@
 
 const indexQuery = graphql`
-query MyQuery {
+query indexQuery {
 	allMarkdownRemark(
 		filter: { fileAbsolutePath: { regex: "/posts/" } }
 		sort: { fields: [frontmatter___date], order: DESC }

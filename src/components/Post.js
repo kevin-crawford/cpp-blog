@@ -11,9 +11,9 @@ import {
 import Img from "gatsby-image"
 import { slugify } from "../util/utilities"
 
-const Post = ({ title, author, path, date, body, tags, fluid }) => {
+const Post = ({ title, author, path, date, body, tags, fluid, id }) => {
   return (
-    <Card>
+    <Card key={id}>
       <Link to={path}>
         <Img className="card-image-top" fluid={fluid} />
       </Link>
@@ -27,8 +27,8 @@ const Post = ({ title, author, path, date, body, tags, fluid }) => {
         </CardSubtitle>
         <CardText>{body}</CardText>
         <ul className="post-tags">
-          {tags.map(tag => (
-            <li>
+          {tags.map((tag, index) => (
+            <li key={index}>
               <Link to={`/tag/${slugify(tag)}`}>
                 <Badge color="primary" className="text-uppercase">{tag}</Badge>
               </Link>

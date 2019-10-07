@@ -4,7 +4,6 @@ import {
 	Card,
 	CardTitle,
 	CardBody,
-	CardText,
 	Form,
 	FormGroup,
 	Input,
@@ -85,7 +84,7 @@ const Sidebar = () => (
 				<div className="twitter">
 
 				</div>
-				<a class="twitter-timeline"
+				<a className="twitter-timeline"
 					href="https://twitter.com/crosspasspod"
 					data-tweet-limit="5"
 					data-chrome="nofooter noborders">

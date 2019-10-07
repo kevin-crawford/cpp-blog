@@ -1,13 +1,11 @@
 import React from "react"
 
 // reactstrap
-import Post from "../components/Post"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Row, Col } from "reactstrap"
 
 // COMPONENTS
-import Showcase from "../components/Showcase"
 import Sidebar from "../components/Sidebar"
 import PodcastIndex from '../components/PodcastIndex';
 import ArticleIndex from '../components/ArticleIndex';
