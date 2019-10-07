@@ -1,7 +1,6 @@
 import React from "react"
-import { StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
-import { podcastQuery } from '../graphql/queries';
 
 const PodcastIndex = () => (
   <StaticQuery
@@ -27,7 +26,36 @@ const PodcastIndex = () => (
       )
     }}
   />
-);
+)
 
+const podcastQuery = graphql`
+  query podcastQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/podcast/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMM Do YYYY")
+            author
+            path
+            tags
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
 
-export default PodcastIndex;
+export default PodcastIndex
