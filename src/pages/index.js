@@ -1,12 +1,16 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+
+// reactstrap
 import Post from "../components/Post"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Row, Col } from "reactstrap"
+
+// COMPONENTS
 import Showcase from "../components/Showcase"
 import Sidebar from "../components/Sidebar"
 import PodcastIndex from '../components/PodcastIndex';
+import ArticleIndex from '../components/ArticleIndex';
 
 const IndexPage = () => (
   <Layout>
@@ -14,63 +18,13 @@ const IndexPage = () => (
     <Row>
       <Col md="8">
         <PodcastIndex />
-        <h1>Recent Articles</h1>
-        <StaticQuery
-          query={indexQuery}
-          render={data => {
-            return (
-              <div>
-                {data.allMarkdownRemark.edges.map(({ node }) => (
-                  <Post
-                    title={node.frontmatter.title}
-                    author={node.frontmatter.author}
-                    path={node.frontmatter.path}
-                    date={node.frontmatter.date}
-                    body={node.excerpt}
-                    fluid={node.frontmatter.image.childImageSharp.fluid}
-                    tags={node.frontmatter.tags}
-                  />
-                ))}
-              </div>
-            )
-          }}
-        />
+        <ArticleIndex />
       </Col>
       <Col md="4">
         <Sidebar />
       </Col>
     </Row>
   </Layout>
-)
-
-const indexQuery = graphql`
-  query MyQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMM Do YYYY")
-            author
-            path
-            tags
-            image {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`
+);
 
 export default IndexPage
