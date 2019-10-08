@@ -2,7 +2,6 @@
 title: "First Podcast - Introduction"
 date: 2019-09-24 07:00:00
 author: "Kevin Crawford"
-path: "/first-podcast"
 type: podcast
 image: ../../images/podcast-default.png
 tags:
@@ -11,4 +10,16 @@ tags:
   - scores
 ---
 
+Welcome to the Crosspass Podcast, hope you enjoy Welcome to the Crosspass Podcast, hope you enjoy
 Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+Welcome to the Crosspass Podcast, hope you enjoy
+

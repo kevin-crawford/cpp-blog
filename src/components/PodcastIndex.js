@@ -9,13 +9,12 @@ const PodcastIndex = () => (
       return (
         <div>
           <h1>Recent Podcasts</h1>
-          {data.allMarkdownRemark.edges.map(({ node }, index) => (
+          {data.allMarkdownRemark.edges.map(({ node }) => (
             <Post
-              key={index}
-              id={node.id}
+              key={node.id}
               title={node.frontmatter.title}
               author={node.frontmatter.author}
-              path={node.frontmatter.path}
+              slug={node.fields.slug}
               date={node.frontmatter.date}
               body={node.excerpt}
               fluid={node.frontmatter.image.childImageSharp.fluid}
@@ -41,7 +40,6 @@ const podcastQuery = graphql`
             title
             date(formatString: "MMM Do YYYY")
             author
-            path
             tags
             image {
               childImageSharp {
@@ -51,6 +49,9 @@ const podcastQuery = graphql`
               }
             }
           }
+          fields {
+              slug
+            }
           excerpt
         }
       }

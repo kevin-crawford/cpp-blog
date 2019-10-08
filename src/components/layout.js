@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
         crossOrigin="anonymous"
       />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Showcase />
       <div className="container" id="content">
         <main>{children}</main>
         <Footer />

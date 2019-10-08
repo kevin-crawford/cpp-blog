@@ -1,16 +1,50 @@
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const { fmImagesToRelative } = require("gatsby-remark-relative-images")
+const { slugify } = require('./src/util/utilities');
+const path = require('path');
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === "MarkdownRemark") {
+    const slugFromTitle = slugify(node.frontmatter.title)
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: "slug",
+      value: slugFromTitle,
     })
   }
+}
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+  const singlePostTemplate = path.resolve('src/templates/single-post.js');
+  return graphql(`
+    {
+      allMarkdownRemark{
+        edges {
+          node {
+            frontmatter {
+              author
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `).then(res => {
+      if (res.errors) return Promise.reject(res.errors)
+      const posts = res.data.allMarkdownRemark.edges
+      // Create single blog post pages
+      posts.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: singlePostTemplate,
+          context: {
+            // passing slug for template to use to get post
+            slug: node.fields.slug
+          },
+        })
+      })
+    })
 }
