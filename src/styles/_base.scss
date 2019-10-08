@@ -36,6 +36,7 @@ h1 {
     color: #007bff;
   }
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -44,4 +45,14 @@ ul {
 .twitter {
   max-width: 320px;
   margin: auto;
+}
+
+
+.btn-404 {
+  text-align: center;
+}
+
+.btn-404 a {
+  width: 300px;
+  margin: 15px 0px;
 }
