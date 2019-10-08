@@ -14,7 +14,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - { name: "path", label: "Path", widget: "hidden" }
-      - { name: "author", label: "Author", widget: "string" }
+      - { name: "author", label: "Author" , widget: "list", allow_add: false, default: ["Daniel Hargis", "Bosko"]}
       - { name: "date", label: "Date", widget: "datetime" }
       - {
           name: "image",
@@ -46,5 +46,6 @@ collections:
         }
       - { name: "title", label: "Title", widget: "string" }
       - { name: "body", label: "Body", widget: "markdown" }
+      - { label: "Podcast File", name: "podcast_file", widget: "file" }
       - { name: "tags", label: "Tags", widget: "list", allow_add: true }
       - { name: "type", label: "Type", widget: "hidden", default: "podcast" }
