@@ -2,7 +2,7 @@
 path: fck-a-path
 author: Daniel
 date: 2019-10-08T21:50:04.695Z
-image: /img/waterpolo_mens_1.jpg
+image: "../../../static/img/waterpolo_mens_1.jpg"
 title: podcast test file
 podcast_file: /img/resistance.mp3
 tags:

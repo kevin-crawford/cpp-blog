@@ -2,7 +2,6 @@ backend:
   name: github
   repo: kevin-crawford/cpp-blog
 media_folder: static/img
-media_folder_relative: true
 public_folder: img
 site_url: https://gallant-poitras-d92b48.netlify.com/
 display_url: https://gallant-poitras-d92b48.netlify.com/
