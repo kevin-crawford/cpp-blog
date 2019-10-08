@@ -7,7 +7,7 @@ tags:
   - asdsadasdas
 type: blog
 ---
-# hey yall 
+# hey yall
 
 ```
 quote stuff here and things of that sortasdasdadsadasdsadasdas 
