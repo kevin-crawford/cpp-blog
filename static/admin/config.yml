@@ -2,7 +2,7 @@ backend:
   name: github
   repo: kevin-crawford/cpp-blog
 media_folder: static/img
-public_folder: ../../../static/img/
+public_folder: img
 site_url: https://cp-podcast.netlify.com/
 display_url: https://cp-podcast.netlify.com/
 collections:
@@ -13,7 +13,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - { name: "path", label: "Path", widget: "hidden" }
-      - { name: "author", label: "Author" , widget: "list", allow_add: false, default: ["Daniel Hargis", "Bosko"]}
+      - { name: "author", label: "Author" , widget: "string"}
       - { name: "date", label: "Date", widget: "datetime" }
       - {
           name: "image",
