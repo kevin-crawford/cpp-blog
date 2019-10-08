@@ -2,6 +2,7 @@ backend:
   name: github
   repo: kevin-crawford/cpp-blog
 media_folder: static/img
+media_folder_relative: true
 public_folder: img
 site_url: https://cp-podcast.netlify.com/
 display_url: https://cp-podcast.netlify.com/
