@@ -15,6 +15,7 @@ module.exports = {
     netlifyCmsPaths,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms-paths`,
+    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
