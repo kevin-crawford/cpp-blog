@@ -76,23 +76,8 @@ const Sidebar = () => (
 				/>
 			</CardBody>
 		</Card>
-		<Card>
-			<CardBody>
-				<CardTitle>
-					Recent Tweets
-				</CardTitle>
-				<div className="twitter">
-
-				</div>
-				<a className="twitter-timeline"
-					href="https://twitter.com/crosspasspod"
-					data-tweet-limit="5"
-					data-chrome="nofooter noborders">
-					Tweets by @Crosspasspod
-					</a>
-			</CardBody>
-		</Card>
-
+		<a class="twitter-timeline" data-tweet-limit="3" href="https://twitter.com/crosspasspod?ref_src=twsrc%5Etfw">
+			Tweets by crosspasspod</a>
 	</div>
 )
 

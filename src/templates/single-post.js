@@ -29,7 +29,7 @@ const SinglePost = ({ data, pageContext }) => {
 					</div>
 				</div>
 			</div>
-			<Layout pageTitle="">
+			<Layout pageTitle="" path="/singlepost">
 				<SEO title={post.title} />
 				<Card>
 					{/* {post.podcast_file != null &&

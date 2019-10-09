@@ -10,7 +10,7 @@ import PodcastIndex from '../components/PodcastIndex';
 import ArticleIndex from '../components/ArticleIndex';
 
 const IndexPage = () => (
-  <Layout pageTitle="">
+  <Layout pageTitle="" path="/">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <PodcastIndex />
     <ArticleIndex />
