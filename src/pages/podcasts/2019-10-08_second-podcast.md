@@ -2,7 +2,7 @@
 path: /fourth-post
 author: Daniel Hargis
 date: 2019-10-09T04:43:35.329Z
-image: ''
+image: '../../images/waterpolo.jpg'
 title: second podcast
 podcast_file: ../../../static/img/resistance.mp3
 tags:
