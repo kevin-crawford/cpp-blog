@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-twitter`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -28,11 +29,18 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 590,
             },
+          },
+          {
+            resolve: 'gatsby-remark-audio',
+            options: {
+              preload: 'auto',
+              loop: false,
+              controls: true,
+              muted: false,
+              autoplay: false
+            }
           },
         ],
       },
@@ -63,6 +71,28 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: "kTODVshOyjhOtBfGnXwzRIcdw",
+          consumer_secret: "jDRIiUT0akq0nnUpuhNWjgxkIPceyel4vst2Cpy7GNrQbJ1bDx",
+          bearer_token: "AAAAAAAAAAAAAAAAAAAAALtGAQEAAAAArtzSFRw1KqnojgrPMRyTi2rLCpk%3DoEXm9RZgWVNz8TVQyrXj7qcULE5yDTmyhUgLnKHsdKbb0aswZX",
+        },
+        queries: {
+          cppTwitterQuery: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              screen_name: "crosspasspod",
+              include_rts: false,
+              exclude_replies: true,
+              tweet_mode: "extended",
+              count: 5,
+            },
+          },
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

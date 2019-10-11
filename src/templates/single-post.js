@@ -1,10 +1,15 @@
 import React, { Fragment } from "react"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+
 import SEO from "../components/seo"
-import { Link } from "gatsby"
-import { CardBody, CardSubtitle, Card, Badge } from "reactstrap"
 import Img from "gatsby-image"
+
+import addAudio from 'react-audio-player'
+
+import ReactAudioPlayer from 'react-audio-player';
+import { CardBody, CardSubtitle, Card, Badge } from "reactstrap"
+
 import { slugify } from "../util/utilities"
 
 
@@ -18,6 +23,16 @@ const SinglePost = ({ data, pageContext }) => {
 		background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url('${headerImg}') no-repeat`,
 		backgroundSize: 'cover'
 	}
+
+	const tags = post.tags.map(tag => (
+		<li key={tag}>
+			<Link to={`/tag/${slugify(tag)}`}>
+				<Badge color="primary">{tag}</Badge>
+			</Link>
+		</li>
+	))
+
+
 	return (
 		<Fragment>
 			<div className="superheader" style={headerStyle}>
@@ -31,26 +46,25 @@ const SinglePost = ({ data, pageContext }) => {
 			</div>
 			<Layout pageTitle="" path="/singlepost">
 				<SEO title={post.title} />
-				<Card>
-					{/* {post.podcast_file != null &&
+				<Card className="single-post card">
+					<audio
+						src={post.audio}
+						controls
+					/>
+					{post.audio != null &&
 						<audio
+							src={post.audio}
 							controls
-							src={relativePath}>
-							Your browser does not support the
-							<code>audio</code> element.
-					</audio>
-					} */}
+						/>
+					}
 					<CardBody>
-						<div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-						<ul className="post-tags">
-							{post.tags.map(tag => (
-								<li key={tag}>
-									<Link to={`/tag/${slugify(tag)}`}>
-										<Badge color="primary">{tag}</Badge>
-									</Link>
-								</li>
-							))}
-						</ul>
+						<div className="content-container" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+						<div className="tag-container">
+							<label>Tags:</label>
+							<ul className="post-tags">
+								{tags}
+							</ul>
+						</div>
 					</CardBody>
 				</Card>
 			</Layout>
@@ -72,6 +86,7 @@ export const postQuery = graphql`
 					relativePath
 					absolutePath
 				}
+				audio
         image {
           childImageSharp {
             fluid(maxWidth: 700) {
