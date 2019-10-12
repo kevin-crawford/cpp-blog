@@ -7,7 +7,7 @@ var netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `Crosspass Podcast`,
+    title: `Cross Pass Podcast`,
     description: `Hosted by Daniel and Bosko, website maintained by Kevin`,
     author: `@kevin-crawford`,
   },
@@ -33,14 +33,14 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-audio',
+            resolve: "gatsby-remark-audio",
             options: {
-              preload: 'auto',
+              preload: "auto",
               loop: false,
               controls: true,
               muted: false,
-              autoplay: false
-            }
+              autoplay: false,
+            },
           },
         ],
       },
@@ -77,7 +77,8 @@ module.exports = {
         credentials: {
           consumer_key: "kTODVshOyjhOtBfGnXwzRIcdw",
           consumer_secret: "jDRIiUT0akq0nnUpuhNWjgxkIPceyel4vst2Cpy7GNrQbJ1bDx",
-          bearer_token: "AAAAAAAAAAAAAAAAAAAAALtGAQEAAAAArtzSFRw1KqnojgrPMRyTi2rLCpk%3DoEXm9RZgWVNz8TVQyrXj7qcULE5yDTmyhUgLnKHsdKbb0aswZX",
+          bearer_token:
+            "AAAAAAAAAAAAAAAAAAAAALtGAQEAAAAArtzSFRw1KqnojgrPMRyTi2rLCpk%3DoEXm9RZgWVNz8TVQyrXj7qcULE5yDTmyhUgLnKHsdKbb0aswZX",
         },
         queries: {
           cppTwitterQuery: {
