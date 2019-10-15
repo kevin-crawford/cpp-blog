@@ -1,4 +1,4 @@
-import React from "react"
+import React,{Fragment} from "react"
 
 // reactstrap
 import Layout from "../components/layout"
@@ -10,11 +10,13 @@ import PodcastIndex from '../components/PodcastIndex';
 import ArticleIndex from '../components/ArticleIndex';
 
 const IndexPage = () => (
-  <Layout pageTitle="" path="/">
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <PodcastIndex />
-    <ArticleIndex />
-  </Layout>
+  <Fragment>
+    <Layout pageTitle="" path="/">
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <PodcastIndex />
+      <ArticleIndex />
+    </Layout>
+  </Fragment>
 );
 
 export default IndexPage

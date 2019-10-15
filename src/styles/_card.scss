@@ -1,6 +1,20 @@
 .card {
-  margin-bottom: 30px;
+   margin-bottom: 30px;
+  .card-subtitle {
+    font-size: 12px;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+  .btn-outline-primary {
+    font-size: 12px;
+  }
+  .badge-primary {
+    font-size: 10px;
+  }
 }
+
+
 ul.post-tags {
   padding: 0;
   display: inline-flex;

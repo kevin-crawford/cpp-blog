@@ -1,10 +1,13 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import Post from "../components/Post"
-
-const PodcastIndex = () => (
+import Post from "../../components/Post"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+const WomensArticles = () => (
+  <Layout pageTitle="Womens Waterpolo Articles" >
+  <SEO title="Tags" keywords={[`gatsby`, `application`, `react`]} />
   <StaticQuery
-    query={podcastQuery}
+    query={womensArticleQuery}
     render={data => {
       return (
         <div>
@@ -24,12 +27,13 @@ const PodcastIndex = () => (
       )
     }}
   />
+  </Layout>
 )
 
-const podcastQuery = graphql`
-  query podcastQuery {
+const womensArticleQuery = graphql`
+  query womensArticleQuery {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/podcast/" } }
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -48,9 +52,9 @@ const podcastQuery = graphql`
               }
             }
           }
-          fields {
-            slug
-          }
+					fields {
+              slug
+            }
           excerpt
         }
       }
@@ -58,4 +62,4 @@ const podcastQuery = graphql`
   }
 `
 
-export default PodcastIndex
+export default WomensArticles

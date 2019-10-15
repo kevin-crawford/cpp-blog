@@ -16,7 +16,7 @@ const TwitterWidget = () => (
       return (
         <>
           <div className="widget twitter">
-            <CardBody className="twitter-header">
+            <div className="twitter-header">
               <img
                 src={
                   data.twitterStatusesUserTimelineCppTwitterQuery.user
@@ -30,45 +30,55 @@ const TwitterWidget = () => (
               >
                 {data.twitterStatusesUserTimelineCppTwitterQuery.user.name}
               </a>
-            </CardBody>
-            <CardTitle className="text-center text-uppercase mb-3">
+            </div>
+            <div className="text-center text-uppercase m-3">
               Recent Tweets
-            </CardTitle>
-            {data.allTwitterStatusesUserTimelineCppTwitterQuery.edges.map(
-              ({ node }) => (
-                <CardBody className="tweet" key={node.favorite_count}>
-                  <span className="date">
-                    Date: {node.created_at.split(` `, 3).join(` `)}
-                  </span>
-                  <CardText className="tweet-content">
-                    {node.full_text}
-                  </CardText>
-                  {node.entities.hashtags ? (
-                    <div className="tweet-hastags">
-                      {node.entities.hashtags.map(({ text }) => (
-                        <a
-                          href={`https://twitter.com/hashtag/${text}`}
-                          key={text}
-                          className="hashtag"
-                        >
-                          #{text}
-                        </a>
-                      ))}
-                    </div>
-                  ) : (
-                    0
-                  )}
-                  <div className="tweet-head">
-                    <span>Link: </span>
-                    {node.entities.urls.map(({ url }) => (
-                      <a href={url} className="tweet-link" key="1">
-                        {url}
-                      </a>
-                    ))}
-                  </div>
-                </CardBody>
-              )
-            )}
+            </div>
+            <div className="tweet-container">
+
+
+              {data.allTwitterStatusesUserTimelineCppTwitterQuery.edges.map(
+                ({ node }) => (
+                  <Card className="tweet" key={node.favorite_count}>
+                    <CardBody>
+                      <span className="date">
+                        Date: {node.created_at.split(` `, 3).join(` `)}
+                      </span>
+
+                      <CardText className="tweet-content">
+                        {node.full_text}
+                      </CardText>
+
+
+                      {node.entities.hashtags ? (
+                        <div className="tweet-hastags">
+                          {node.entities.hashtags.map(({ text }) => (
+                            <a
+                              href={`https://twitter.com/hashtag/${text}`}
+                              key={text}
+                              className="hashtag"
+                            >
+                              #{text}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                          0
+                        )}
+                      <div className="tweet-head">
+                        <span>Link: </span>
+                        {node.entities.urls.map(({ url }) => (
+                          <a href={url} className="tweet-link" key="1">
+                            {url}
+                          </a>
+                        ))}
+                      </div>
+                    </CardBody>
+                  </Card>
+
+                )
+              )}
+            </div>
           </div>
         </>
       )

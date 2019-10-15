@@ -6,3 +6,22 @@
 .content-container {
   margin: 25px 10px;
 }
+
+
+.superbanner {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 500px;
+  position: relative !important;
+  padding: 2.5%;
+}
+
+.superbanner h1 {
+  position: absolute;
+  bottom: 70px;
+  color: #ffffff;
+  font-size: 24px;
+  @media only screen and (min-width: 640px) {
+		font-size: 45px;
+	}
+}

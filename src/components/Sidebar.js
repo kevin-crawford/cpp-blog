@@ -1,47 +1,44 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
-import { Card, CardTitle, CardBody, Form, FormGroup, Input } from "reactstrap"
-
-import TwitterWidget from "../components/TwitterWidget"
+import { Card, CardTitle, CardBody, CardText, Form, FormGroup, Input } from "reactstrap"
 
 import Img from "gatsby-image"
 
-const Sidebar = () => (
-  <div>
-    <Card>
-      <TwitterWidget />
-    </Card>
-    <Card>
-      <CardBody>
-        <CardTitle className="text-center text-uppercase mb-3">
-          Newsletter
-        </CardTitle>
-        <Form className="text-center">
-          <FormGroup>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Your email address.."
-            />
-          </FormGroup>
-          <button className="btn btn-outline-success text-uppercase">
-            Subscribe
-          </button>
-        </Form>
-      </CardBody>
-    </Card>
-    <Card>
-      <CardBody>
-        <CardTitle className="text-center text-uppercase">
-          Advertisement
-        </CardTitle>
-        <img
-          src="https://via.placeholder.com/320x200"
-          alt="Advert"
-          style={{ width: "100%" }}
-        />
-      </CardBody>
-    </Card>
+const Sidebar = ({ author, authorFluid }) => (
+  <Fragment>
+    {author && (
+      <Card>
+        <CardBody>
+          <Img className="card-image-top" fluid={authorFluid} />
+          <CardTitle className="text-center text-uppercase m-3">
+            {author.name}
+          </CardTitle>
+          <CardText>
+            {author.bio}
+          </CardText>
+        </CardBody>
+
+        <div className="author-social-links text-center">
+          <ul>
+            <li>
+              <a href={author.facebook} target="_blank" rel="noopener noreferrer" className="facebook">
+                <i className="fab fa-facebook-f fa-lg"></i>
+              </a>
+            </li>
+            <li>
+              <a href={author.twitter} target="_blank" rel="noopener noreferrer" className="twitter">
+                <i className="fab fa-twitter fa-lg"></i>
+              </a>
+            </li>
+            <li>
+              <a href={author.linkedin} target="_blank" rel="noopener noreferrer" className="linkedin">
+                <i className="fab fa-linkedin fa-lg"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </Card>
+    )}
     <Card>
       <CardBody>
         <CardTitle className="text-center text-uppercase mb-3">
@@ -73,7 +70,7 @@ const Sidebar = () => (
         />
       </CardBody>
     </Card>
-  </div>
+  </Fragment>
 )
 
 const sidebarQuery = graphql`
